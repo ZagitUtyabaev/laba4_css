@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;900&display=swap');
+
+/* Базовые стили */
+body { 
+    background-color: #F4ECE1;
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+}
+
+/* ШАПКА */
+.header {
+    display: flex; 
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 5%;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo__text {
+    font-size: 32px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.header__nav {
+    display: flex;
+    gap: 40px;
+}
+
+.header__link {
+    text-decoration: none;
+    color: #000;
+    font-size: 18px;
+}
+
+.actions-panel {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    padding: 10px 20px;
+    border-radius: 30px;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+}
+
+.actions-panel__search {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-right: 20px;
+    border-right: 1px solid #ccc;
+}
+
+.cart {
+    position: relative;
+    padding-left: 20px;
+}
+
+.cart__badge {
+    position: absolute;
+    top: -5px; right: -5px;
+    background: #FF3333;
+    color: #fff;
+    font-size: 10px;
+    width: 15px; height: 15px;
+    border-radius: 50%;
+    display: flex; justify-content: center; align-items: center;
+}
+
+/* ГЛАВНЫЙ БЛОК */
+.hero {
+    padding: 20px 5%;
+}
+
+.hero__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hero__content {
+    flex: 1;
+}
+
+.hero__title {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: clamp(40px, 8vw, 120px);
+    margin: 0;
+}
+
+.hero__title--orange { color: #FF7E00; }
+
+.hero__title-group {
+    font-size: 0.4em; /* В 2.5 раза меньше основного текста */
+    line-height: 1;
+}
+
+.hero__description {
+    color: #909090;
+    font-size: 20px;
+    max-width: 500px;
+    margin: 20px 0;
+}
+
+.hero__buttons {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.hero__btn--order {
+    background: #2F2F2F;
+    color: #fff;
+    border: none;
+    padding: 20px 40px;
+    border-radius: 40px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.hero__video-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.hero__video-link img { width: 50px; }
+
+.hero__image-box {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.hero__main-img {
+    max-width: 100%;
+    height: auto;
+}
+/* Планшеты (max-width: 1100px) */
+@media (max-width: 1100px) {
+    .header__nav {
+        gap: 20px; /* Сужаем меню */
+    }
+    
+    .hero__title {
+        font-size: 80px; /* Уменьшаем гигантский заголовок */
+    }
+    
+    .hero__description {
+        font-size: 18px;
+    }
+}
+
+/* Мобильные (max-width: 600px) */
+@media (max-width: 600px) {
+    .header {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .header__nav {
+        display: none; /* Скрываем навигацию для экономии места (можно сделать бургер-меню) */
+    }
+
+    .hero__container {
+        flex-direction: column; /* Текст и картинка встают друг под друга */
+        text-align: center;
+    }
+
+    .hero__content {
+        order: 2; /* Картинка будет сверху, текст снизу */
+    }
+
+    .hero__image-box {
+        order: 1;
+        margin-bottom: 30px;
+    }
+
+    .hero__title {
+        justify-content: center;
+        font-size: 60px;
+    }
+
+    .hero__buttons {
+        flex-direction: column; /* Кнопки тоже в столбик */
+        gap: 15px;
+    }
+
+    .hero__description {
+        margin: 20px auto;
+    }
+}
